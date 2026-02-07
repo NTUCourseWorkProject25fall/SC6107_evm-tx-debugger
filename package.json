@@ -1,0 +1,42 @@
+{
+  "name": "evm-transaction-debugger",
+  "version": "1.0.0",
+  "description": "Ethereum transaction debugger and analyzer for SC6107",
+  "private": true,
+  "scripts": {
+    "install:foundry": "foundryup",
+    "install:contracts": "forge install",
+    "build": "npm run build:hardhat",
+    "build:hardhat": "hardhat compile",
+    "build:foundry": "forge build",
+    "test": "npm run test:hardhat",
+    "test:hardhat": "hardhat test",
+    "test:foundry": "forge test -vv",
+    "test:coverage": "hardhat coverage",
+    "test:coverage:foundry": "forge coverage --report lcov",
+    "test:gas": "forge test --gas-report",
+    "lint": "forge fmt --check 2>nul || true",
+    "format": "forge fmt",
+    "frontend:dev": "cd frontend && npm run dev",
+    "frontend:build": "cd frontend && npm run build",
+    "frontend:test": "cd frontend && npm test",
+    "analyze": "node scripts/analyze-transaction.js",
+    "fork": "hardhat node",
+    "fork:start": "node scripts/setup-local-fork.js --start",
+    "docs": "cd docs && npm run build 2>nul || echo No docs build script"
+  },
+  "keywords": ["ethereum", "evm", "transaction", "debugger", "analyzer", "blockchain"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "ethers": "^6.9.0",
+    "@openzeppelin/contracts": "^5.0.0",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@nomicfoundation/hardhat-ethers": "^3.0.0",
+    "hardhat": "^2.19.0",
+    "@types/node": "^20.10.0"
+  }
+}
