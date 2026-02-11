@@ -25,18 +25,26 @@
     "fork:start": "node scripts/setup-local-fork.js --start",
     "docs": "cd docs && npm run build 2>nul || echo No docs build script"
   },
-  "keywords": ["ethereum", "evm", "transaction", "debugger", "analyzer", "blockchain"],
+  "keywords": [
+    "ethereum",
+    "evm",
+    "transaction",
+    "debugger",
+    "analyzer",
+    "blockchain"
+  ],
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "ethers": "^6.9.0",
     "@openzeppelin/contracts": "^5.0.0",
-    "dotenv": "^16.3.1"
+    "dotenv": "^16.3.1",
+    "ethers": "^6.9.0"
   },
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
     "@nomicfoundation/hardhat-ethers": "^3.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^4.0.0",
+    "@types/node": "^20.10.0",
     "hardhat": "^2.19.0",
-    "@types/node": "^20.10.0"
+    "hardhat-gas-reporter": "^2.3.0"
   }
 }

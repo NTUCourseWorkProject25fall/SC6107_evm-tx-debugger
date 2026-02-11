@@ -1,5 +1,6 @@
 require("dotenv/config");
 require("@nomicfoundation/hardhat-toolbox");
+require("hardhat-gas-reporter");
 
 const RPC_URL = process.env.RPC_URL || "https://eth-sepolia.g.alchemy.com/v2/demo";
 const FORK_BLOCK = process.env.FORK_BLOCK ? parseInt(process.env.FORK_BLOCK, 10) : undefined;
@@ -33,5 +34,12 @@ module.exports = {
     sepolia: {
       url: RPC_URL,
     },
+  },
+  gasReporter: {
+    enabled: process.env.REPORT_GAS === "true",
+    currency: "USD",
+    outputFile: "gas-report.txt",
+    noColors: true,
+    coinmarketcap: process.env.COINMARKETCAP_API_KEY,
   },
 };
